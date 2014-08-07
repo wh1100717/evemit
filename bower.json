@@ -1,0 +1,22 @@
+{
+  "name": "evemit",
+  "version": "0.1.0",
+  "homepage": "https://github.com/wh1100717/evemit",
+  "authors": [
+    "Wang Hao <eric.3126@hotmail.com>"
+  ],
+  "description": "event emitter",
+  "main": "dist/evemit.js",
+  "keywords": [
+    "event",
+    "events",
+    "emitter"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "seajs": "~2.3.0"
+  }
+}
