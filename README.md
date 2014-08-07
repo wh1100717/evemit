@@ -30,7 +30,7 @@ Event Emitter
 
 ##API
 
-*   evemit.bind(el, event, fn, priority)
+*   `evemit.bind(el, event, fn, priority)`
 
-*   evemit.unbind(el, event, fn, priority)
+*   `evemit.unbind(el, event, fn, priority)`
 
