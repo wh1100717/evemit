@@ -12,10 +12,12 @@
  */
 define(function(require, exports, module) {
   'use strict';
+  var _isIE;
+  _isIE = window.addEventListener != null ? false : true;
   exports.bind = function(el, eve, fn, priority) {
-    return el[window.addEventListener != null ? "addEventListener" : "attachEvent"]("" + (window.addEventListener ? '' : 'on') + eve, fn, priority || false);
+    return el[_isIE ? "attachEvent" : "addEventListener"]("" + (_isIE ? 'on' : '') + eve, fn, priority || false);
   };
   exports.unbind = function(el, eve, fn, priority) {
-    return el[window.addEventListener != null ? "removeEventListener" : "detachEvent"]("" + (window.addEventListener ? '' : 'on') + eve, fn, priority || false);
+    return el[_isIE ? "detachEvent" : "removeEventListener"]("" + (_isIE ? 'on' : '') + eve, fn, priority || false);
   };
 });
