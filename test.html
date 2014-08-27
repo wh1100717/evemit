@@ -19,6 +19,27 @@
                     evemit.unbind(star, 'click', starClick);
                     alert("try star again")
                 })
+
+                var obj = {};
+                evemit(obj);
+                obj.on("wow", function(){
+                    console.log("This is first listener function!");
+                });
+                obj.on("wow", function(){
+                    console.log("This is second listener function!");
+                });
+                console.log(obj.listeners("wow"));
+                obj.emit("wow");
+
+                obj.once("wow_once", function(){
+                    console.log("This could only be called once!")
+                });
+                console.log(obj.events());
+                obj.emit("wow_once");
+                console.log(obj.events());
+                obj.emit("wow_once");
+                obj.off("wow");
+                console.log(obj.events());
             })
         </script>
     </body>
