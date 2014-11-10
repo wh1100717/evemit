@@ -35,24 +35,24 @@ module.exports = function (grunt) {
         dest: 'dist/<%= pkg.name %>.min.js'
       },
     },
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
-      lib: {
-        options: {
-          jshintrc: 'src/.jshintrc'
-        },
-        src: ['src/**/*.js']
-      },
-      test: {
-        src: ['test/**/*.js']
-      },
-    },
+    // jshint: {
+    //   options: {
+    //     jshintrc: '.jshintrc',
+    //     reporter: require('jshint-stylish')
+    //   },
+    //   gruntfile: {
+    //     src: 'Gruntfile.js'
+    //   },
+    //   lib: {
+    //     options: {
+    //       jshintrc: 'src/.jshintrc'
+    //     },
+    //     src: ['src/**/*.js']
+    //   },
+    //   test: {
+    //     src: ['test/**/*.js']
+    //   },
+    // },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -70,5 +70,5 @@ module.exports = function (grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify']);
+  grunt.registerTask('default', ['concat', 'uglify']);
 };

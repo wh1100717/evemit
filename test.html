@@ -10,18 +10,18 @@
         </div>
         <script src="bower_components/seajs/dist/sea.js"></script>
         <script>
-            seajs.use('./dist/evemit.js', function(evemit){
+            seajs.use('./dist/evemit.js', function(Evemit){
                 var star = document.getElementsByTagName('a')[0];
                 var button = document.getElementsByTagName('button')[0];
                 var starClick = function(){alert("oops")};
-                evemit.bind(star, 'click', starClick);
-                evemit.bind(button, 'click', function(){
-                    evemit.unbind(star, 'click', starClick);
+                Evemit.bind(star, 'click', starClick);
+                Evemit.bind(button, 'click', function(){
+                    Evemit.unbind(star, 'click', starClick);
                     alert("try star again")
                 })
 
                 var obj = {};
-                evemit(obj);
+                obj = new Evemit(obj);
                 obj.on("wow", function(){
                     console.log("This is first listener function!");
                 });
