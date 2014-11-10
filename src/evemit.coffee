@@ -18,19 +18,25 @@ define (require, exports, module) ->
             @events = {}
             obj[i] = j for i,j of Evemit.prototype
             return obj
+
         on: (eve, fn) ->
             @events[eve] = @events[eve] or []
             @events[eve].push(fn)
+
         once: (eve, fn) ->
             self = @
             @on eve, ->
                 self.off(eve)
                 fn.apply @, arguments
+
         off: (eve) -> delete @events[eve]
+
         emit: (eve, args...) ->
             if @events[eve]?
                 e.apply(@, args) for e in @events[eve]
+
         events: -> e for e of @events
+
         listeners: (eve) -> l for l in @events[eve]
 
     Evemit.bind = (el, eve, fn, priority) ->
